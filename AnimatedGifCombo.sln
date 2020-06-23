@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimatedGifComboTestApp", "AnimatedGifComboTestApp\AnimatedGifComboTestApp.csproj", "{1792B880-6DD0-4289-83D0-ACDC7EE160F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimatedGifCombo", "AnimatedGifCombo\AnimatedGifCombo.csproj", "{B0027383-38CE-4623-9502-C87FD95697CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1792B880-6DD0-4289-83D0-ACDC7EE160F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1792B880-6DD0-4289-83D0-ACDC7EE160F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1792B880-6DD0-4289-83D0-ACDC7EE160F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1792B880-6DD0-4289-83D0-ACDC7EE160F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0027383-38CE-4623-9502-C87FD95697CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0027383-38CE-4623-9502-C87FD95697CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0027383-38CE-4623-9502-C87FD95697CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0027383-38CE-4623-9502-C87FD95697CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B9F85192-ECD6-4950-9AEB-A805A500CCC7}
+	EndGlobalSection
+EndGlobal
