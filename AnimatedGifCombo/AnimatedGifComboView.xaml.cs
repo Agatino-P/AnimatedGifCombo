@@ -1,47 +1,60 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
 using System.Reflection;
 using System.Resources;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace AnimatedGifCombo
 {
-   
+
     public partial class AnimatedGifComboView : UserControl
     {
-
-
         public ObservableCollection<AnimatedCut> AnimatedCuts
         {
             get { return (ObservableCollection<AnimatedCut>)GetValue(AnimatedCutsProperty); }
             set { SetValue(AnimatedCutsProperty, value); }
         }
         public static readonly DependencyProperty AnimatedCutsProperty =
-            DependencyProperty.Register("AnimatedCuts", typeof(ObservableCollection<AnimatedCut>), typeof(AnimatedGifComboView), new PropertyMetadata(null));
+            DependencyProperty.Register("AnimatedCuts",
+                typeof(ObservableCollection<AnimatedCut>),
+                typeof(AnimatedGifComboView),
+                new PropertyMetadata(null)
+                );
 
+        public AnimatedCut SelectedCut
+        {
+            get { return (AnimatedCut)GetValue(SelectedCutProperty); }
+            set { SetValue(SelectedCutProperty, value); }
+        }
 
         
+        public static readonly DependencyProperty SelectedCutProperty =
+            DependencyProperty.Register("SelectedCut", 
+                typeof(AnimatedCut), 
+                typeof(AnimatedGifComboView), 
+                new PropertyMetadata(null, OnSelectedCutChanged));
+
+        private static void OnSelectedCutChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (!(d is AnimatedGifComboView agCV))
+                return;
+            
+        }
 
         public AnimatedGifComboView()
         {
             AnimatedCuts = new ObservableCollection<AnimatedCut>();
             InitializeComponent();
+        }
+        
+        private void accb_Loaded(object sender, RoutedEventArgs e)
+        {
             loadAnimatedGifs();
+
         }
 
         private void loadAnimatedGifs()
@@ -63,13 +76,15 @@ namespace AnimatedGifCombo
                     //packUri = $"pack://application:,,,/AssemblyName;component/CutAnimations/taglio.gif";
                     AnimatedCuts.Add(new AnimatedCut(substrings[1], resource));
                 }
-                
+
             }
+            SelectedCut = AnimatedCuts[0];
 
             //string packUri = $"pack://application:,,,/AssemblyName;component/CutAnimations/taglio.gif";
             //img1.Source = new BitmapImage(new Uri(AnimatedCuts[0].Uri, UriKind.Relative));
             // https://stackoverflow.com/questions/210922/how-do-i-get-an-animated-gif-to-work-in-wpf
 
         }
+
     }
 }

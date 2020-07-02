@@ -1,16 +1,22 @@
-﻿<Window x:Class="AnimatedGifComboTestApp.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:agc="clr-namespace:AnimatedGifCombo;assembly=AnimatedGifCombo"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:gif="http://wpfanimatedgif.codeplex.com"
-        xmlns:local="clr-namespace:AnimatedGifComboTestApp"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        Title="MainWindow" Width="800" Height="450"
-        mc:Ignorable="d">
-    <StackPanel>
+﻿<Window
+    x:Class="AnimatedGifComboTestApp.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:agc="clr-namespace:AnimatedGifCombo;assembly=AnimatedGifCombo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:gif="http://wpfanimatedgif.codeplex.com"
+    xmlns:local="clr-namespace:AnimatedGifComboTestApp"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
+    <DockPanel LastChildFill="False">
         <!--<Image gif:ImageBehavior.AnimatedSource="Images/taglio_blu.gif" Height="200"/>-->
-        <agc:AnimatedGifComboView />
-
-    </StackPanel>
+        <agc:AnimatedGifComboView DockPanel.Dock="Top" SelectedCut="{Binding SelectedCut, Mode=TwoWay}" />
+        <TextBlock DockPanel.Dock="Bottom" Text="{Binding SelectedCut.Name, FallbackValue=None}" />
+    </DockPanel>
 </Window>

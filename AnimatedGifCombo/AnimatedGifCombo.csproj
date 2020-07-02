@@ -67,7 +67,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="CutAnimations\taglio.gif" />
+    <Resource Include="CutAnimations\taglio_rosso.gif" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="AnimatedGifComboView.xaml">
